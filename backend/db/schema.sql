@@ -1,7 +1,7 @@
 DROP  DATABASE goodNight;
 CREATE DATABASE goodNight;
 
-Use goodNight
+Use goodNight;
 
 CREATE TABLE roles (
     role_id INT AUTO_INCREMENT NOT NULL,
