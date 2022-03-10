@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { link, useNavigate } from "react-router-dom";
-
+import Login from "./Login";
 import {
   Container,
   Navbar,
@@ -14,60 +14,20 @@ import {
 } from "react-bootstrap";
 
 const Navigation = () => {
-  const [active, setActive] = useState(false);
+  // const [active, setActive] = useState(false);
   const [show, setShow] = useState(false);
-
-  window.onscroll = function () {
-    if (window.scrollY >= 100) {
-      setActive(true);
-    } else {
-      setActive(false);
-    }
-  };
+  const [showLogin, setShowLogin] = useState(false);
+ 
+  // window.onscroll = function () {
+  //   if (window.scrollY >= 100) {
+  //     setActive(true);
+  //   } else {
+  //     setActive(false);
+  //   }
+  // };
   return (
     <>
-      {/* <nav className={`navbar fixed-top navbar-expand-lg navbar-dark ${active&&"bg-dark"} p-md-3`}>
-        <div className="container">
-        <Button  variant="primary">Button #1</Button>
-          <a className="navbar-brand" href="#">
-            Good Night
-          </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <div className="mx-auto"></div>
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link text-white" href="#">
-                  Login
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link text-white" href="#">
-                  Sign Up
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link text-white" href="#">
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav> */}
-
-      <Navbar bg={active && "light"} expand="lg" className="px-4 fixed-top ">
+      <Navbar bg="light" expand="lg" className="px-4 fixed-top  ">
         <Container fluid>
           <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
@@ -93,7 +53,6 @@ const Navigation = () => {
               <Button
                 variant="success"
                 className="d-flex ms-auto rounded-circle p-2"
-                
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -107,22 +66,40 @@ const Navigation = () => {
                 </svg>
               </Button>
             </div>
-            <Modal show={show} fullscreen={true} onHide={() => setShow(false)}>
-        <Modal.Header closeButton>
-          
-        </Modal.Header>
-        <Modal.Body>
-          
-        </Modal.Body>
-      </Modal>
-    
+            <Modal
+              show={show}
+              fullscreen={true}
+              style={{ maxHeight: "30%" }}
+              onHide={() => setShow(false)}
+            >
+              <Modal.Header closeButton></Modal.Header>
+              <Modal.Body></Modal.Body>
+            </Modal>
+
+            <Modal
+              show={showLogin}
+              size="lg"
+              aria-labelledby="contained-modal-title-vcenter"
+              centered
+              onHide={() => setShowLogin(false)}
+            >
+              <Modal.Header closeButton>
+                <Modal.Title>Login</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <Login/>
+              </Modal.Body>
+              <Modal.Footer style={{justifyContent: "center"}} >
+              <div  class="mt-4 text-center "> Don't have an account? <a href="#" class="open-modal" data-target="signupModal" data-current="loginModal"> Sign up </a></div>
+              </Modal.Footer>
+            </Modal>
             <Nav
               className="ms-auto my-2 my-lg-0 d-flex "
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="#action1">Log in</Nav.Link>
-              <Nav.Link href="#action2">Sign up</Nav.Link>
+              <Nav.Link onClick={() => setShowLogin(true)}>Log in</Nav.Link>
+              <Nav.Link href="/cities">Sign up</Nav.Link>
 
               {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
           <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
