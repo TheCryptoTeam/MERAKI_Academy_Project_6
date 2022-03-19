@@ -3,7 +3,6 @@
   <a href="" rel="noopener">
  <img width=200px height=200px src="https://res.cloudinary.com/cryptoteam/image/upload/v1647340869/g4jvlsgejyfssvm95fud.svg" alt="Project logo"></a>
 </p>
-
 <h3 align="center">Good Night</h3>
 
 ---
@@ -74,8 +73,8 @@ to run the backend server, use the following command in the root file
 npm run dev
 ```
 ## Project Digram <a name = "project_digram"></a>
+<img  src="https://res.cloudinary.com/cryptoteam/image/upload/v1647730806/mxkf4cgpal9baenb2qnq.png" alt="Diagram">
 
-![Diagram](./img/Data.png)
 
 ## Acknowlegments <a name = "acknowlegments"></a>
 
@@ -84,7 +83,7 @@ npm run dev
 ##  Project Management System <a name = "Project_Management_System"></a>
 
 
-Trello : https://trello.com/b/qIUBBpwi/crypto-team
+Trello : https://trello.com/b/L6Jn1b0f/booking-app
 
 
 ## ⛏️ Built Using <a name = "built_using"></a>
