@@ -67,7 +67,9 @@ const Search = ({ hotelName }) => {
               <div className="row mt-5">
                 {state.hotels.map((hotel) => {
                   return (
-                    <div class="col col-xl-3 col-sm-6">
+                    <div class="col col-xl-3 col-sm-6" style={{paddingLeft:"0",paddingRight:"0",  boxShadow:" 5px 10px 8px #888888"
+                    ,width:"23%",margin:"12px"
+                  }}>
                       <div class=" ">
                         <img
                           src={hotel.image}
@@ -75,7 +77,7 @@ const Search = ({ hotelName }) => {
                           style={{ height: "360px" }}
                           alt="Hollywood Sign on The Hill"
                         />
-                        <div class="card-body ">
+                        <div class="card-body " style={{paddingBottom:"0"}}>
                           <div className="row">
                             <div className="col-xl-6">
                               <h5 class="card-title" style={{ height: "20px" }}>
@@ -94,7 +96,7 @@ const Search = ({ hotelName }) => {
                                 addToWishList(hotel.id);
                               }}
                             >
-                              {hotel.description}{" "}
+                              {/* {hotel.description}{" "} */}
                             </p>
                           </p>
                         </div>
