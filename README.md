@@ -26,7 +26,8 @@
  
 ## 🧐 About <a name = "about"></a>
 
-booking hotels website.
+A website that provides the possibility of booking hotels in tourist places in Jordan such as Amman, Aqaba, Wadi Rum and Madaba.
+
 
 ## Demo <a name = "demo"></a>
 
