@@ -4,7 +4,7 @@ import axios from "axios";
 import ReactStars from "react-rating-stars-component";
 import { useParams } from "react-router-dom";
 import { MdPerson } from "react-icons/md";
-import {FaStar}  from "react-icons/fa"
+import { FaStar } from "react-icons/fa";
 
 const Rating = () => {
   const userId = localStorage.getItem("myUserId");
@@ -21,7 +21,6 @@ const Rating = () => {
   });
 
   const avarageCalc = () => {
-    
     setAvarage(7);
     let result = 0;
     for (let i = 0; i < ratings.length; i++) {
@@ -31,17 +30,14 @@ const Rating = () => {
     if (true) {
       let num = result / ratings.length;
       setAvarage(num);
-      console.log("avarage ", avarage);
     }
   };
 
   const ratingChanged = (newRating) => {
-    console.log(newRating);
     setRating(newRating);
   };
 
   const createRating = async () => {
-    console.log("userId", userId);
     let isVoted = false;
     ratings.forEach((element) => {
       if (element.user_id == userId) {
@@ -56,15 +52,11 @@ const Rating = () => {
       Authorization: `Bearer ${state.token}`,
     };
     await axios
-      .post(
-        `http://localhost:5000/rate/${id}`,
-        { rating },
-        { headers }
-      )
+      .post(`http://localhost:5000/rate/${id}`, { rating }, { headers })
       .then((res) => {
         if (res.data.success) {
           getRatings(id);
-          console.log("in Create", rating);
+         
         }
       })
       .catch((err) => {
@@ -73,11 +65,9 @@ const Rating = () => {
   };
 
   const getRatings = async () => {
-    console.log("in get ratings");
     await axios
       .get(`http://localhost:5000/rate/${id}`)
       .then((res) => {
-       
         if (res.data.success) {
           setRatings(res.data.results);
         } else {
@@ -90,7 +80,6 @@ const Rating = () => {
   };
 
   useEffect(() => {
-    console.log("in use effect component");
     getRatings();
   }, []);
 
@@ -101,7 +90,6 @@ const Rating = () => {
   useEffect(() => {
     createRating();
   }, [rating]);
- 
 
   return (
     <>
@@ -116,17 +104,17 @@ const Rating = () => {
         activeColor="#ffd700"
       />
 
-        <div className="rating">
-          <div className="votes">
-      <MdPerson color={"#344055"} size={25} />
-      <span id="votes">{ratings.length}  </span>{" "}
+      <div className="rating">
+        <div className="votes">
+          <MdPerson color={"#344055"} size={25} />
+          <span id="votes">{ratings.length} </span>{" "}
+        </div>
+        <div>
+          <span className="avarage">
+            {avarage.toFixed(1)} <FaStar id="star" />
+          </span>
+        </div>
       </div>
-      <div >
-        <span className="avarage">{avarage.toFixed(1)} <FaStar id="star"/></span>
-       
-      </div>
-           </div>
-      
     </>
   );
 };
