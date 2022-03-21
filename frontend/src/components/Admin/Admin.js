@@ -126,7 +126,7 @@ const Admin = () => {
 
     try {
       await axios.put(`http://localhost:5000/hotels/${id}`, body);
-      console.log(body);
+    
       dispatch(updateHotelById(body));
       Swal.fire({
         icon: "success",
