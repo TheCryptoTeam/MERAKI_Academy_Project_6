@@ -27,7 +27,6 @@ function CheckoutForm() {
   const state = useSelector((state) => {
     return {
       token: state.loginReducer.token,
-      
     };
   });
 
@@ -60,7 +59,7 @@ function CheckoutForm() {
           showConfirmButton: false,
           timer: 1700,
         });
-        
+
         navigate("/home");
       } catch (error) {
         console.log("paymentMerrorcatch", error);
@@ -75,52 +74,50 @@ function CheckoutForm() {
       });
     }
   };
-  
+
   return (
-   
-    <div
-    style={{
-      padding: "3rem",
-    }}
-  >
     <div
       style={{
-        maxWidth: "500px",
-        margin: "0 auto",
+        padding: "3rem",
       }}
     >
-      <form
+      <div
         style={{
-          display: "block",
-          width: "100%",
+          maxWidth: "500px",
+          margin: "0 auto",
         }}
-        onSubmit={payMoney}
       >
-        <div
+        <form
           style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
+            display: "block",
+            width: "100%",
           }}
+          onSubmit={payMoney}
         >
-          <CardElement
-            className="card"
-            options={{
-              style: {
-                base: {
-                  backgroundColor: "white",
-                },
-              },
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
             }}
-          />
-          <button className="pay-button" disabled={isPaymentLoading}>
-            {isPaymentLoading ? "Loading..." : "Pay"}
-          </button>
-        </div>
-      </form>
+          >
+            <CardElement
+              className="card"
+              options={{
+                style: {
+                  base: {
+                    backgroundColor: "white",
+                  },
+                },
+              }}
+            />
+            <button className="pay-button" disabled={isPaymentLoading}>
+              {isPaymentLoading ? "Loading..." : "Pay"}
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
-           
   );
 }
 export default StripePayment;
