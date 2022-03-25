@@ -30,11 +30,12 @@ const Cities = () => {
     getAllCities();
   }, []);
 
-  console.log(state.cities.length);
   //========================================
   return (
-      <div className="container-fluid col-11 ">
-      <h2 className="mb-3  mt-5 mb-5  display-5 fw-bold">Inspiration for your next trip</h2>
+    <div className="container-fluid col-11 ">
+      <h2 className="mb-3  mt-5 mb-5  display-5 fw-bold">
+        Inspiration for your next trip
+      </h2>
       <Row xs={1} md={2} lg={4} className="g-4">
         {state.cities.map((element) => (
           <Col>
@@ -55,7 +56,7 @@ const Cities = () => {
           </Col>
         ))}
       </Row>
-      </div>
+    </div>
   );
 };
 export default Cities;

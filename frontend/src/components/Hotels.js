@@ -1,33 +1,29 @@
+import axios from "axios";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setHotels } from "../reducer/hotels";
+import { useNavigate } from "react-router-dom";
 
-import axios from 'axios';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { setHotels } from '../reducer/hotels';
-import { useNavigate } from 'react-router-dom';
-import Comment from './Comment';
-import './hotels.css'
+import "./hotels.css";
 import Swal from "sweetalert2";
 
-import { BsHeart,BsFillHeartFill } from 'react-icons/bs';
-import {AiOutlineHeart } from 'react-icons/ai';
-
-
+import { BsFillHeartFill } from "react-icons/bs";
 
 const Hotels = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [skip, setSkip] = useState(0);
-  //   const [page, setPage] = useState(1);
+
   const [show, setShow] = useState(false);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const state = useSelector((state) => {
     return {
       token: state.loginReducer.token,
       hotels: state.hotelsReducer.hotels,
       isLoggedIn: state.loginReducer.isLoggedIn,
     };
-  })
+  });
   /////////////////////////////////////////////////////////////////////////////////////////////////////
   //  getAllHotel
 
@@ -36,9 +32,8 @@ const Hotels = () => {
       .get(`http://localhost:5000/hotels`)
       .then((res) => {
         dispatch(setHotels(res.data.results));
-        console.log(res);
-        setShow(true)
 
+        setShow(true);
       })
       .catch((err) => {
         throw err;
@@ -51,9 +46,7 @@ const Hotels = () => {
     };
     await axios
       .post(`http://localhost:5000/wishList/${id}`, {}, { headers })
-      .then((res) => {
-
-      })
+      .then((res) => {})
       .catch((err) => {
         console.log(err);
       });
@@ -65,74 +58,78 @@ const Hotels = () => {
     getAllHotels();
   }, [skip]);
 
-
   return (
     <div class="container-fluid col-11 ">
+      <div className="row " style={{ marginTop: "130px" }}>
+        {show &&
+          state.hotels.map((hotel) => {
+            return (
+              <div
+                class="col col-xl-3 col-lg-3 col-md-3  col-sm-6 "
+                style={{
+                  paddingLeft: "0",
+                  paddingRight: "0",
+                  boxShadow: " 5px 10px 8px #888888",
+                  width: "23%",
+                  margin: "12px",
+                }}
+              >
+                <div class="container1">
+                  <div
+                    onClick={() => {
+                      navigate(`/detail/${hotel.id}`);
+                    }}
+                  >
+                    <img
+                      src={hotel.image}
+                      class="card-img-top rounded img1"
+                      style={{ height: "360px" }}
+                    ></img>
+                  </div>
+                  <div
+                    class="button2 
+"
+                  >
+                    <BsFillHeartFill
+                      class="test"
+                      size={50}
+                      onClick={() => {
+                        Swal.fire({
+                          icon: "success",
+                          title: "Added successfully to wishList",
+                          showConfirmButton: false,
+                          timer: 1500,
+                        });
 
-    <div className='row ' style={{marginTop:"130px"}}>
+                        addToWishList(hotel.id);
+                      }}
+                    />{" "}
+                  </div>
+                </div>
 
-    {show&&state.hotels.map(hotel=>{
-        return (
-            <div class="col col-xl-3 col-lg-3 col-md-3  col-sm-6 " style={{paddingLeft:"0",paddingRight:"0",  boxShadow:" 5px 10px 8px #888888"
-            ,width:"23%",margin:"12px"
-          }}>
-             <div class="container1" >
-        <div onClick={() => {
-          navigate(`/detail/${hotel.id}`)
-
-        }}>
-          {/* <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top rounded img1" style={{ height: "360px" }} alt="Hollywood Sign on The Hill" /> */}
-          {/* <div>{hotel.image}</div> */}
-          <img src={hotel.image} class="card-img-top rounded img1" style={{ height: "360px" }}></img>
-
-        </div>
-        <div class="button2 
-"><BsFillHeartFill class="test"  size={50} onClick={() => {
-                    Swal.fire({
-                      icon: "success",
-                      title: "Added successfully to wishList",
-                      showConfirmButton: false,
-                      timer: 1500,
-                    });
-
-                    addToWishList(hotel.id);
-                  }} /> </div>
-
+                <div className="row" style={{ marginTop: "80px" }}>
+                  <div className="col-xl-8 ">
+                    <h5
+                      class="card-title1"
+                      style={{ height: "20px" }}
+                      onClick={() => {
+                        navigate(`/detail/${hotel.id}`);
+                      }}
+                    >
+                      {" "}
+                      {hotel.hotelName}
+                    </h5>
+                  </div>
+                  <div className="col-xl-4 d-flex flex-row-reverse bd-highlight ">
+                    <p className="price">{"$" + hotel.price}/night</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
       </div>
+    </div>
+  );
+};
 
-
-      <div className='row' style={{ marginTop: "80px" }}>
-        <div className='col-xl-8 '>
-          <h5 class="card-title1" style={{ height: "20px" }} onClick={()=>{
-              navigate(`/detail/${hotel.id}`)
-    
-          }}> {hotel.hotelName}</h5>
-        </div>
-        <div className='col-xl-4 d-flex flex-row-reverse bd-highlight '>
-          <p className="price">{"$"+hotel.price}/night</p>
-        </div></div>
-           </div>
-
-        )
-    })}</div>                        
-
-</div>
-  )
-}
-
-
-
-
-{/* <div class="button1 
-"><BsHeart size={45} onClick={() => {
-                    Swal.fire({
-                      icon: "success",
-                      title: "Added successfully to wishList",
-                      showConfirmButton: false,
-                      timer: 1500,
-                    });
-
-                    addToWishList(hotel.id);
-                  }} /> </div> */}
-
-export default Hotels
+export default Hotels;
