@@ -10,8 +10,7 @@ import { login } from "../reducer/login/index";
 import { useDispatch } from "react-redux";
 //********************** */
 
-const Login = ( {setShowLogin}) => {
-  const [showSignup, setShowSignup] = useState(false);
+const Login = ({ setShowLogin }) => {
   const [showPassword, setShowPassword] = useState(false);
   const onSuccess = (response) => {
     dispatch(login(response.tokenId));
@@ -55,8 +54,7 @@ const Login = ( {setShowLogin}) => {
           navigate("/ProductsTable");
         } else {
           navigate("/home");
-          setShowLogin(false)
-          
+          setShowLogin(false);
         }
       })
       .catch((err) => {
@@ -170,21 +168,18 @@ const Login = ( {setShowLogin}) => {
       </div>
       <div className="form-group mt-4">
         <button
-          
           type="submit"
           data-dismiss="modal"
           onClick={() => {
             loginUser();
-            
           }}
           className="btn btn-success d-flex w-100 justify-content-center"
         >
           Log in
         </button>
-        <br/>
+        <br />
 
         {message && <div className="alert alert-danger">{message}</div>}
-    
 
         <div className="line-separator my-2 d-flex align-items-center">
           <span className="mx-2"> or </span>
