@@ -209,7 +209,7 @@ const Navigation = ({ setHotelName }) => {
                 </>
               ) : (
                 <>
-                <Nav.Link className="fw-bold" style={{ color: "#198754" }}>
+                  <Nav.Link className="fw-bold" style={{ color: "#198754" }}>
                     {localStorage.getItem("userName")}
                   </Nav.Link>
                   <BsHeart
@@ -220,7 +220,6 @@ const Navigation = ({ setHotelName }) => {
                       navigate("/wishList");
                     }}
                   />
-                  
 
                   <Nav.Link
                     className="auth-button"
