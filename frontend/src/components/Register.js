@@ -2,9 +2,7 @@ import React, { useState } from "react";
 
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-//redax
 
-import { useSelector } from "react-redux";
 
 // =================================================================
 
@@ -12,11 +10,7 @@ const Register = ({setShowLogin,setShowSignup}) => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
-  const state = useSelector((state) => {
-    return {
-      isLoggedIn: state.loginReducer.isLoggedIn,
-    };
-  });
+  
 
   const [userName, setUserName] = useState("");
 
