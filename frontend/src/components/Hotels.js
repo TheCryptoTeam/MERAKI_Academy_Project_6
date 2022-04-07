@@ -103,7 +103,7 @@ const Hotels = () => {
 
                         addToWishList(hotel.id);
                       }}
-                    />{" "}
+                    />
                   </div>
                 </div>
 
@@ -116,7 +116,7 @@ const Hotels = () => {
                         navigate(`/detail/${hotel.id}`);
                       }}
                     >
-                      {" "}
+                      
                       {hotel.hotelName}
                     </h5>
                   </div>
