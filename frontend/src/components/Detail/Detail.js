@@ -97,9 +97,9 @@ const [show2, setShow2] = useState(false);
           {show1 && (
             <Col className="details shadow bg-white rounded  col-sm-11  col-lg-6 ms-lg-0  mt-md-1   ms-sm-4">
               <div className="center ">
-                {" "}
+                
                 <p className="fs-4 mt-2 ms-3 mb-3 center">
-                  {hotel[0].hotelName}{" "}
+                  {hotel[0].hotelName}
                 </p>
               </div>
               <p className="fs-4 ms-3">
@@ -107,8 +107,8 @@ const [show2, setShow2] = useState(false);
               </p>
               <div className="detail">
                 <p className="fs-4 ms-3">
-                  {" "}
-                  <MdPerson /> {hotel[0].guests} Guests . <MdBedroomParent />{" "}
+              
+                  <MdPerson /> {hotel[0].guests} Guests . <MdBedroomParent />
                   {hotel[0].bedrooms} Bedrooms . <FaBed /> {hotel[0].beds} Beds
                   . <MdBathroom /> {hotel[0].bathrooms} WC
                 </p>

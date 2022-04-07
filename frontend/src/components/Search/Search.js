@@ -88,7 +88,7 @@ const Search = ({ hotelName }) => {
                           <div className="row">
                             <div className="col-xl-6">
                               <h5 class="card-title" style={{ height: "20px" }}>
-                                {" "}
+                                
                                 {hotel.hotelName}
                               </h5>
                             </div>
@@ -103,7 +103,7 @@ const Search = ({ hotelName }) => {
                                 addToWishList(hotel.id);
                               }}
                             >
-                              {/* {hotel.description}{" "} */}
+                              {/* {hotel.description} */}
                             </p>
                           </p>
                         </div>
