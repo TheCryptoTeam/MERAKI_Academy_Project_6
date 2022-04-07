@@ -107,7 +107,7 @@ const Rating = () => {
       <div className="rating">
         <div className="votes">
           <MdPerson color={"#344055"} size={25} />
-          <span id="votes">{ratings.length} </span>{" "}
+          <span id="votes">{ratings.length} </span>
         </div>
         <div>
           <span className="avarage">
