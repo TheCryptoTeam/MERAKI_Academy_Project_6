@@ -40,7 +40,7 @@ const Rating = () => {
   const createRating = async () => {
     let isVoted = false;
     ratings.forEach((element) => {
-      if (element.user_id == userId) {
+      if (element.user_id === userId) {
         return (isVoted = true);
       }
     });
