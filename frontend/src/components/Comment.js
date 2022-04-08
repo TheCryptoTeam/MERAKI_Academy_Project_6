@@ -129,7 +129,7 @@ padding:"15px"
                     <p className="block pComment" style={{marginBottom:"0",marginTop:"2px"}}>{comment.comment}</p>
                   </div>
 
-                  {userName == comment.commenter ? (
+                  {userName === comment.commenter ? (
                     <AiOutlineDelete
                     style={{width:"120px",cursor:"pointer"}}
                       size={35}
