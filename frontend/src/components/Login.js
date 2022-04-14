@@ -147,25 +147,7 @@ const Login = ({ setShowLogin }) => {
         </span>
       </div>
       <span className="text-danger"></span>
-      <div className="form-check">
-        <input
-          type="checkbox"
-          name="remember_me"
-          id="remember_me"
-          className="form-check-input"
-        />
-        <label className="form-check-label" for="remember_me">
-          Remember Me
-        </label>
-        <a
-          href="#"
-          className="float-end open-modal"
-          data-current="loginModal"
-          data-target="forgotPasswordModal"
-        >
-          Forgot Password
-        </a>
-      </div>
+     
       <div className="form-group mt-4">
         <button
           type="submit"
