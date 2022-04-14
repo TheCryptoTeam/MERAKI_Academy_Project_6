@@ -12,7 +12,6 @@ import { BsFillHeartFill } from "react-icons/bs";
 
 const Hotels = () => {
   const navigate = useNavigate();
-  const [skip, setSkip] = useState(0);
 
   const [show, setShow] = useState(false);
 
@@ -56,7 +55,7 @@ const Hotels = () => {
 
   useEffect(() => {
     getAllHotels();
-  }, [skip]);
+  }, []);
 
   return (
     <div class="container-fluid col-11 ">
@@ -116,7 +115,6 @@ const Hotels = () => {
                         navigate(`/detail/${hotel.id}`);
                       }}
                     >
-                      
                       {hotel.hotelName}
                     </h5>
                   </div>
