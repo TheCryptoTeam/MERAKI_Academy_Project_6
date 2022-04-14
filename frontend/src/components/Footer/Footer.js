@@ -104,7 +104,7 @@ const Footer = () => {
             <div class="social-media-links mt-3 mb-3 mb-md-0">
               <div class="d-flex ">
                 <div class="social-links ">
-                  <a href="#" title="Facebook" rel="noreferrer">
+                  <a href="/home" title="Facebook" rel="noreferrer">
                     <img
                       class="img src-image-fadeIn"
                       src="https://hyra.cron24.com/images/email/logo_facebook.png"
@@ -113,7 +113,7 @@ const Footer = () => {
                   </a>
                 </div>
                 <div class="social-links">
-                  <a href="#" title="Instagram" rel="noreferrer">
+                  <a href="/home" title="Instagram" rel="noreferrer">
                     <img
                       class="img src-image-fadeIn"
                       src="	https://hyra.cron24.com/images/email/logo_instagram.png"
@@ -122,7 +122,7 @@ const Footer = () => {
                   </a>
                 </div>
                 <div class="social-links">
-                  <a href="#" title="Twitter" rel="noreferrer">
+                  <a href="/home" title="Twitter" rel="noreferrer">
                     <img
                       class="img src-image-fadeIn"
                       src="	https://hyra.cron24.com/images/email/logo_twitter.png"
@@ -131,7 +131,7 @@ const Footer = () => {
                   </a>
                 </div>
                 <div class="social-links">
-                  <a href="#" title="Linkedin" rel="noreferrer">
+                  <a href="/home" title="Linkedin" rel="noreferrer">
                     <img
                       class="img src-image-fadeIn"
                       src="https://hyra.cron24.com/images/email/logo_linkedin.png"
@@ -153,7 +153,7 @@ const Footer = () => {
                   </a>
                 </div>
                 <div class="social-links">
-                  <a href="#" title="Youtube" rel="noreferrer">
+                  <a href="/home" title="Youtube" rel="noreferrer">
                     <img
                       class="img src-image-fadeIn"
                       src="https://hyra.cron24.com/images/email/logo_youtube.png"

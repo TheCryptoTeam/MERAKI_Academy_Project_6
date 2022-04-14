@@ -6,7 +6,6 @@ import { setHotels } from "../../reducer/hotels";
 import "./Search.css";
 
 const Search = ({ hotelName }) => {
-  const [elementId, setElementId] = useState([]);
 
   const dispatch = useDispatch();
   const [show, setShow] = useState(0);
@@ -53,9 +52,7 @@ const Search = ({ hotelName }) => {
   }, [hotelName]);
 
   /////////////////////////////
-  const handlecolor = (element) => {
-    setElementId([...elementId, element.id]);
-  };
+ 
 
   return (
     <div>
