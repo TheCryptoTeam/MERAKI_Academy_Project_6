@@ -10,7 +10,6 @@ import { loadStripe } from "@stripe/stripe-js";
 import "./Payment.css";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
 const StripePayment = () => {
   const stripe = loadStripe(
     "pk_test_51KQqbdCywILMWPHuZO10mguPNtgJzVrCD0pxcT9JEx4QbUf99Fz3hSur084HvAlojVVCHhVRyd4PFdCVgD2a07zE00iyGO8pHw"
@@ -24,11 +23,6 @@ const StripePayment = () => {
 
 function CheckoutForm() {
   //==============================
-  const state = useSelector((state) => {
-    return {
-      token: state.loginReducer.token,
-    };
-  });
 
   //============================
   const navigate = useNavigate();
