@@ -20,7 +20,7 @@ import {
   MdBedroomParent,
   MdPriceChange,
 } from "react-icons/md";
-import Swal from "sweetalert2";
+
 import StripePayment from "../Stripe/StripContainer";
 
 const Detail = () => {
