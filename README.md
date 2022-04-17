@@ -29,7 +29,7 @@ A website that provides the possibility of booking hotels in tourist places in J
 
 
 ## Demo <a name = "demo"></a>
-👇👇
+
 - [Good Night](https://classy-concha-d8dcef.netlify.app/) 
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
@@ -48,20 +48,15 @@ These instructions will get you a copy of the project and run it on your local m
 clone the repository to your local machin
 ```
 https://github.com/TheCryptoTeam/MERAKI_Academy_Project_6
-```
-You need to make sure that there is a **package.json** file
-if the apackage.json doesn't exist, run the following commands 
-```
-npm init -y
-npm i
+
 ```
 open root folder and install required packages
 ```
-npm i
+cd backend && npm install 
 ```
-open client folder and install required packages
+open frontend folder and install required packages
 ```
-cd client && npm i
+cd frontend && npm install
 ```
 
 to run the client side, use the following command
